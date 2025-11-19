@@ -1,4 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
+import { Header } from '@components'
+import { leagueSpartan } from '@fonts'
 
 type Props = {
     children: React.ReactNode;
@@ -7,8 +9,11 @@ type Props = {
 export default async function RootLayout({ children }: Props) {
     return (
         <html>
-            <body>
-                <NextIntlClientProvider>{children}</NextIntlClientProvider>
+            <body className={leagueSpartan.className}>
+                <NextIntlClientProvider>
+                    <Header />
+                    {children}
+                </NextIntlClientProvider>
             </body>
         </html>
     );

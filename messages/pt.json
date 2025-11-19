@@ -1,5 +1,11 @@
 {
+    "Header": {
+        "register": "Inscrição",
+        "informations": "Informações",
+        "schedule": "Cronograma",
+        "about": "Sobre"
+    },
     "HomePage": {
-        "title": "Ola!"
+        "title": "Olá!"
     }
 }

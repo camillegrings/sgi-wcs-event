@@ -17,9 +17,16 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "baseUrl": "src/",
     "paths": {
       "@/*": [
-        "./*"
+        "./*",
+      ],
+      "@components": [
+        "components/index.ts"
+      ],
+      "@fonts": [
+        "fonts/fonts.ts"
       ]
     },
     "plugins": [
