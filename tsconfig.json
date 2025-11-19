@@ -27,6 +27,9 @@
       ],
       "@fonts": [
         "fonts/fonts.ts"
+      ],
+      "@assets/*": [
+        "assets/*"
       ]
     },
     "plugins": [

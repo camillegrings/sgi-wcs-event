@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { Header } from '@components'
 import { leagueSpartan } from '@fonts'
 
+import '../../styles/globals.css'
+
 type Props = {
     children: React.ReactNode;
 };
