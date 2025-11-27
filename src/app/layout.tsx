@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { Header } from '@components'
+import { Header, Footer } from '@components'
 import { leagueSpartan } from '@fonts'
 
 import '../../styles/globals.css'
@@ -15,6 +15,7 @@ export default async function RootLayout({ children }: Props) {
                 <NextIntlClientProvider>
                     <Header />
                     {children}
+                    <Footer />
                 </NextIntlClientProvider>
             </body>
         </html>
