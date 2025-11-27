@@ -1,0 +1,145 @@
+.form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form label {
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.form input {
+    border: 1px solid #FC7C01;
+    background-color: #000000;
+    max-width: 320px;
+    height: 27px;
+    border-radius: 2px;
+    color: white;
+}
+
+.form input[aria-invalid="true"] {
+    border: 1px solid #ec4949;
+}
+
+.form input:focus,
+.form input:focus-visible {
+    border: 2px solid #FC7C01;
+    outline: none;
+}
+
+.form input[aria-invalid="true"]:focus,
+.form input[aria-invalid="true"]:focus-visible {
+    border: 2px solid #ec4949;
+}
+
+.radiogroup input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+}
+
+.radiogroup .radioitem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 20px;
+    margin-bottom: 8px;
+}
+
+.radiogroup .radioitem label {
+    padding-left: 30px;
+    cursor: pointer;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.radiogroup label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #FC7C01;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.radiogroup input[type="radio"]:checked+label::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #FC7C01;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.radiolegend,
+.paymentlegend {
+    font-weight: 300;
+}
+
+.radiolegend+.errorMessage {
+    margin-bottom: 15px;
+}
+
+.errorMessage {
+    font-size: 14px;
+    color: #ec4949;
+    margin-top: 5px;
+}
+
+.paymentContent {
+    margin-top: 10px;
+    display: flex;
+}
+
+.paymentInfo {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 300;
+}
+
+.emailLink {
+    text-decoration: underline;
+}
+
+.emailText {
+    padding-top: 12px;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+@media (max-width: 767px) {
+    .paymentContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paymentInfo {
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 0;
+    }
+
+    .paymentInfo>div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+}
