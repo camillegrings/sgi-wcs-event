@@ -28,9 +28,9 @@ export default function Header() {
                 <Image alt='SGI' src={logo} width={50} height={33} />
             </Link>
             <nav className={`${styles.nav} ${isOpen && styles.open}`}>
-                <Link href="/register">{translation('register')}</Link>
                 <Link href="/info">{translation('informations')}</Link>
-                <Link href="/schedule">{translation('schedule')}</Link>
+                <Link href="/schedule">{translation('previous-events')}</Link>
+                <Link href="/register">{translation('register')}</Link>
                 <Link href="/#about">{translation('about')}</Link>
                 <a className={`${styles.instagram}`} href='https://www.instagram.com/sgi_oficial/'>
                     <span className={`${styles.instagramIcon}`}></span>

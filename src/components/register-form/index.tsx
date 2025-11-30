@@ -1,10 +1,14 @@
 'use client'
 import { useForm } from "react-hook-form"
+import { useState } from "react"
 import { useTranslations } from 'next-intl';
 import Image from 'next/image'
-import { Button } from '@components'
+import { ToastContainer, toast } from 'react-toastify';
+import { Button, Loader } from '@components'
 import qrcode from '@assets/qrcodepix.png'
 import styles from './style.module.css'
+
+import sendRegisterForm from '../../lib/sendRegisterForm'
 
 interface IFormInput {
     Email: string
@@ -19,20 +23,55 @@ interface IFormInput {
 export default function RegisterForm() {
     const translation = useTranslations('Register');
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>()
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const PIX_KEY = '00020101021126580014br.gov.bcb.pix013629a01897-c30a-4db3-9027-1a1373e4129e5204000053039865802BR5925Lucas Esteves da Conceica6009SAO PAULO622905251JCNJGQ2V7D1A9Y7EHNETVNF963043224'
 
-    function onSubmit(data: IFormInput) {
-        console.log(data)
+    async function onSubmit(data: IFormInput) {
+        try {
+            setIsLoading(true)
+            await sendRegisterForm(data)
+            setIsLoading(false)
+            setShowSuccessMessage(true)
+        } catch (error) {
+            setIsLoading(false)
+            console.error(error);
+            toast.error(translation('form-send-error'), {
+                position: "top-right",
+                theme: "colored",
+            });
+        }
     }
 
     async function copyPixToClipboard() {
         try {
-            await navigator.clipboard.writeText("codigo-pix-fake");
+            await navigator.clipboard.writeText(PIX_KEY);
+            toast(translation('copy-success'), {
+                position: "top-right",
+                theme: "dark",
+            });
         } catch (err) {
             console.error('Failed to copy text: ', err);
+            toast.error(translation('copy-error'), {
+                position: "top-right",
+                theme: "colored",
+            });
         }
     }
 
-    console.log(errors)
+    if (showSuccessMessage) {
+        return (
+            <div className={`${styles.successContainer}`}>
+                <p className={`${styles.formSuccess}`}>{translation('form-send-success')}</p>
+                <p className={`${styles.successEmailText}`}>{translation('send-payment-receipt')}</p>
+                <a className={`${styles.successEmailLink}`} href="mailto:swingdegarotos@gmail.com">swingdegarotos@gmail.com</a>
+                <div className={`${styles.successQRCode}`}>
+                    <Image alt='QRCode PIX' src={qrcode} width={160} height={150} />
+                    <Button label={translation('copy-pix')} onClick={copyPixToClipboard} type="secondary" />
+                </div>
+            </div>
+        )
+    }
 
     return (
         <form className={`${styles.form}`}>
@@ -92,12 +131,12 @@ export default function RegisterForm() {
                     {errors.Role?.type === 'required' && translation('required-field')}
                 </p>
                 <div className={`${styles.radioitem}`}>
-                    <input {...register("Role", { required: true })} type="radio" value="0" id="role-0" />
-                    <label htmlFor="role-0">{translation('role-option1')}</label>
+                    <input {...register("Role", { required: true })} type="radio" value="Leader" id="role-leader" />
+                    <label htmlFor="role-leader">{translation('role-option1')}</label>
                 </div>
                 <div className={`${styles.radioitem}`}>
-                    <input {...register("Role", { required: true })} type="radio" value="1" id="role-1" />
-                    <label htmlFor="role-1">{translation('role-option2')}</label>
+                    <input {...register("Role", { required: true })} type="radio" value="Follower" id="role-follower" />
+                    <label htmlFor="role-follower">{translation('role-option2')}</label>
                 </div>
             </fieldset>
             <fieldset className={`${styles.radiogroup}`}>
@@ -106,24 +145,24 @@ export default function RegisterForm() {
                     {errors.Tickets?.type === 'required' && translation('required-field')}
                 </p>
                 <div className={`${styles.radioitem}`}>
-                    <input {...register("Tickets", { required: true })} type="radio" value="0" id="tickets-0" />
-                    <label htmlFor="tickets-0">{translation('tickets-option1')}</label>
-                </div>
-                <div className={`${styles.radioitem}`}>
                     <input {...register("Tickets", { required: true })} type="radio" value="1" id="tickets-1" />
-                    <label htmlFor="tickets-1">{translation('tickets-option2')}</label>
+                    <label htmlFor="tickets-1">{translation('tickets-option1')}</label>
                 </div>
                 <div className={`${styles.radioitem}`}>
                     <input {...register("Tickets", { required: true })} type="radio" value="2" id="tickets-2" />
-                    <label htmlFor="tickets-2">{translation('tickets-option3')}</label>
+                    <label htmlFor="tickets-2">{translation('tickets-option2')}</label>
                 </div>
                 <div className={`${styles.radioitem}`}>
                     <input {...register("Tickets", { required: true })} type="radio" value="3" id="tickets-3" />
-                    <label htmlFor="tickets-3">{translation('tickets-option4')}</label>
+                    <label htmlFor="tickets-3">{translation('tickets-option3')}</label>
                 </div>
                 <div className={`${styles.radioitem}`}>
                     <input {...register("Tickets", { required: true })} type="radio" value="4" id="tickets-4" />
-                    <label htmlFor="tickets-4">{translation('tickets-option5')}</label>
+                    <label htmlFor="tickets-4">{translation('tickets-option4')}</label>
+                </div>
+                <div className={`${styles.radioitem}`}>
+                    <input {...register("Tickets", { required: true })} type="radio" value="5" id="tickets-5" />
+                    <label htmlFor="tickets-5">{translation('tickets-option5')}</label>
                 </div>
             </fieldset>
             <fieldset className={`${styles.radiogroup}`}>
@@ -132,12 +171,16 @@ export default function RegisterForm() {
                     {errors.Compete?.type === 'required' && translation('required-field')}
                 </p>
                 <div className={`${styles.radioitem}`}>
-                    <input {...register("Compete", { required: true })} type="radio" value="0" id="compete-0" />
-                    <label htmlFor="compete-0">{translation('compete-option1')}</label>
+                    <input {...register("Compete", { required: true })} type="radio" value="1" id="compete-1" />
+                    <label htmlFor="compete-1">{translation('compete-option1')}</label>
                 </div>
                 <div className={`${styles.radioitem}`}>
-                    <input {...register("Compete", { required: true })} type="radio" value="1" id="compete-1" />
-                    <label htmlFor="compete-1">{translation('compete-option2')}</label>
+                    <input {...register("Compete", { required: true })} type="radio" value="2" id="compete-2" />
+                    <label htmlFor="compete-2">{translation('compete-option2')}</label>
+                </div>
+                <div className={`${styles.radioitem}`}>
+                    <input {...register("Compete", { required: true })} type="radio" value="3" id="compete-3" />
+                    <label htmlFor="compete-3">{translation('compete-option3')}</label>
                 </div>
             </fieldset>
             <div>
@@ -147,16 +190,21 @@ export default function RegisterForm() {
                     <div className={`${styles.paymentInfo}`}>
                         <div>
                             <Button label={translation('copy-pix')} onClick={copyPixToClipboard} type="secondary" />
+                            <p className={`${styles.pixCode}`}>{PIX_KEY}</p>
+                        </div>
+                        <div>
                             <p className={`${styles.emailText}`}>{translation('send-payment-receipt')}</p>
                             <a className={`${styles.emailLink}`} href="mailto:swingdegarotos@gmail.com">swingdegarotos@gmail.com</a>
                         </div>
-                        <p>{translation('form-sent-memo')}{" =)"}</p>
                     </div>
                 </div>
+                <p>{translation('form-sent-memo')}{" =)"}</p>
             </div>
             <div className={`${styles.submit}`}>
                 <Button label={translation('send')} onClick={handleSubmit(onSubmit)} type="primary" />
             </div>
+            <ToastContainer />
+            {isLoading && <Loader />}
         </form>
     )
 }

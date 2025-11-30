@@ -1,12 +1,16 @@
 {
     "Header": {
-        "register": "Inscrição",
+        "register": "Inscrições",
         "informations": "Informações",
-        "schedule": "Cronograma",
-        "about": "Sobre"
+        "about": "Sobre o SG",
+        "previous-events": "Eventos Anteriores"
     },
     "HomePage": {
-        "title": "Olá!"
+        "date-start": "DIAS",
+        "date-middle": "E",
+        "date-end": "DE ABRIL",
+        "address-1": "R. Domingos de Morais, 2441",
+        "address-2": "Vila Mariana, São Paulo, Brasil"
     },
     "Register": {
         "email": "Email para contato",
@@ -41,7 +45,11 @@
         "tickets-option4": "Baile avulso (sábado)",
         "tickets-option5": "Baile avulso (domingo)",
         "payment": "Pagamento",
-        "send-payment-receipt": "Após realizar o pagamento favor enviar comprovante para:",
-        "form-sent-memo": "Não se esqueça de clicar para finalizar o formulário abaixo senão os dados preenchidos não serão gravados"
+        "send-payment-receipt": "Após realizar o pagamento, favor, enviar comprovante para:",
+        "form-sent-memo": "Não se esqueça de clicar para finalizar o formulário abaixo senão os dados preenchidos não serão gravados",
+        "copy-success": "Chave PIX copiada!",
+        "copy-error": "Erro ao copiar a chave PIX. Tente novamente.",
+        "form-send-success": "Formulário enviado com sucesso!",
+        "form-send-error": "Erro ao enviar formulário. Tente novamente."
     }
 }

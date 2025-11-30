@@ -101,6 +101,7 @@
 .paymentContent {
     margin-top: 10px;
     display: flex;
+    margin-bottom: 40px;
 }
 
 .paymentInfo {
@@ -125,10 +126,50 @@
     padding: 20px;
 }
 
+.successContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSuccess {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.successEmailText {
+    font-size: 20px;
+    text-align: center;
+}
+
+.successEmailLink {
+    font-size: 20px;
+    text-decoration: underline;
+    padding-top: 10px;
+}
+
+.successQRCode {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.successQRCode>img {
+    margin-bottom: 20px;
+}
+
+.pixCode {
+    font-size: 12px;
+    margin: 10px 0;
+}
+
 @media (max-width: 767px) {
     .paymentContent {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 30px;
     }
 
     .paymentInfo {
@@ -141,5 +182,14 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
+    }
+
+    .pixCode {
+        text-align: center;
+        line-break: anywhere;
+    }
+
+    .submit {
+        padding-bottom: 10px;
     }
 }

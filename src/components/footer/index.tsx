@@ -13,9 +13,9 @@ export default function Footer() {
                 <Image alt='SGI' src={logo} width={50} height={33} />
             </Link>
             <nav className={`${styles.nav}`}>
-                <Link href="/register">{translation('register')}</Link>
                 <Link href="/info">{translation('informations')}</Link>
-                <Link href="/schedule">{translation('schedule')}</Link>
+                <Link href="/schedule">{translation('previous-events')}</Link>
+                <Link href="/register">{translation('register')}</Link>
                 <Link href="/#about">{translation('about')}</Link>
             </nav>
             <div className={`${styles.social}`}>

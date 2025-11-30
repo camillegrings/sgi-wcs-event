@@ -1,0 +1,54 @@
+.container {
+    padding: 40px;
+    position: relative;
+}
+
+.date {
+    font-size: 65px;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+
+.date span {
+    color: #EF64FE
+}
+
+.place {
+    font-size: 60px;
+    color: #EF64FE
+}
+
+.address {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.instagram {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.instagramIcon {
+    background: url('@assets/instagram.svg') no-repeat;
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.instagramLabel {
+    font-size: 25px;
+    color: #fc7c01;
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.zap {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

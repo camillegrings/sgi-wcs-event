@@ -1,6 +1,7 @@
 :root {
   --background: #151515;
   --foreground: #FFFFFF;
+  --toastify-color-dark: #90009f;
 }
 
 html,
