@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction: column;
     padding-bottom: 50px;
+    padding-top: 56px;
 }
 
 .logo {
@@ -45,6 +46,8 @@
 
     .container {
         padding-bottom: 30px;
+        padding-top: 56px;
+        position: initial;
     }
 }
 

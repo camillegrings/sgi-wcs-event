@@ -17,16 +17,18 @@ export default function Header() {
 
     return (
         <header className={`${styles.container}`}>
-            <button className={`${styles.mobileMenu}`} onClick={toggleNav}>
-                <div className={`${styles.hamburger} ${isOpen && styles.active}`}>
-                    <div className={`${styles.bar} ${styles.top}`}></div>
-                    <div className={`${styles.bar} ${styles.middle}`}></div>
-                    <div className={`${styles.bar} ${styles.bottom}`}></div>
-                </div>
-            </button>
-            <Link href="/">
-                <Image alt='SGI' src={logo} width={50} height={33} />
-            </Link>
+            <div className={`${styles.menuTop}`}>
+                <button className={`${styles.mobileMenu}`} onClick={toggleNav}>
+                    <div className={`${styles.hamburger} ${isOpen && styles.active}`}>
+                        <div className={`${styles.bar} ${styles.top}`}></div>
+                        <div className={`${styles.bar} ${styles.middle}`}></div>
+                        <div className={`${styles.bar} ${styles.bottom}`}></div>
+                    </div>
+                </button>
+                <Link href="/">
+                    <Image alt='SGI' src={logo} width={50} height={33} />
+                </Link>
+            </div>
             <nav className={`${styles.nav} ${isOpen && styles.open}`}>
                 <Link href="/info">{translation('informations')}</Link>
                 <Link href="/schedule">{translation('previous-events')}</Link>

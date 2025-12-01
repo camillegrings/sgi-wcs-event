@@ -3,6 +3,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #151515;
+    z-index: 10;
 }
 
 .nav {
@@ -79,8 +86,21 @@
         display: block;
     }
 
-    .container {
+    .menuTop {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         padding: 10px 20px;
+        background-color: #151515;
+        z-index: 10;
+    }
+
+    .container {
+        padding: 0;
     }
 
     .nav {
