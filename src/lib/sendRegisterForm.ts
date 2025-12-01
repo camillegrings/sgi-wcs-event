@@ -22,7 +22,7 @@ interface IExcel {
   'Competição': string
 }
 
-const FORM_VALUES = {
+const FORM_VALUES: { [key: string]: { [key: string]: string } } = {
   Level: {
     0: "Nível 0",
     1: "Nível 1",
@@ -44,7 +44,7 @@ const FORM_VALUES = {
   }
 }
 
-const FORM_LABEL = {
+const FORM_LABEL: { [key: string]: string } = {
   Email: "Email",
   Name: "Nome",
   Phone: "Telefone",
@@ -54,8 +54,8 @@ const FORM_LABEL = {
   Compete: "Competição"
 }
 
-function parseFormDataToExcel(data: IFormInput) {
-  const excelData = {}
+function parseFormDataToExcel(data: { [key: string]: string }) {
+  const excelData: { [key: string]: string } = {}
 
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -72,7 +72,7 @@ function parseFormDataToExcel(data: IFormInput) {
   return excelData
 }
 
-export default async function sendRegisterForm(data: IFormInput) {
+export default async function sendRegisterForm(data: { [key: string]: string }) {
   try {
     const serviceAccountAuth = new JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,

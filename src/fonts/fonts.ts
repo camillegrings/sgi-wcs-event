@@ -11,6 +11,6 @@ export const rascals = localFont({
 })
 
 export const leagueSpartan = localFont({
-    src: './leagueSpartan.ttf',
+    src: './LeagueSpartan.ttf',
     display: 'swap',
 })
