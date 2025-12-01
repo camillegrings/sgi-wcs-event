@@ -14,7 +14,7 @@ export default function HomeInfo() {
             <div className={`${styles.videoWrapper}`}>
                 <Image alt='' src={tape} width={100} height={50} className={`${styles.tape}`} />
                 <video width="300" height="500" controls autoPlay muted loop>
-                    <source src='video.mp4' type="video/mp4" />
+                    <source src='https://rnuayxakvuwi2axn.public.blob.vercel-storage.com/SGI_video.mp4' type="video/mp4" />
                 </video>
                 <Image alt='' src={xtape} width={38} height={38} className={`${styles.xtape}`} />
             </div>
