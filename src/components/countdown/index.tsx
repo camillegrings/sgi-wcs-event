@@ -43,7 +43,7 @@ export default function Countdown() {
     const timerComponents = Object.keys(timeLeft).map((interval) => {
         return (
             <div key={interval} className={`${styles.wrapper}`}>
-                <span className={`${styles.time} ${snowmanGraffiti.className}`}>{timeLeft[interval]}</span>
+                <span className={`${styles.time} ${snowmanGraffiti.className}`}>{timeLeft[interval as keyof typeof timeLeft]}</span>
                 <span className={`${styles.interval} ${rascals.className}`}>{translation(interval)}</span>
             </div>
         );

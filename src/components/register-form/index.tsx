@@ -17,7 +17,8 @@ interface IFormInput {
     Level: string,
     Role: string,
     Compete: string,
-    Tickets: string
+    Tickets: string,
+    [key: string]: string
 }
 
 export default function RegisterForm() {
