@@ -1,0 +1,11 @@
+{
+    "Header": {
+        "register": "Register",
+        "informations": "Informations",
+        "schedule": "Schedule",
+        "about": "About"
+    },
+    "HomePage": {
+        "title": "Hello"
+    }
+}

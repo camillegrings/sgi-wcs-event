@@ -1,0 +1,168 @@
+.container {
+    padding: 40px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    padding-left: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content {
+    margin-left: 50px;
+}
+
+.date {
+    font-size: 65px;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+
+.date span {
+    color: #EF64FE
+}
+
+.place {
+    font-size: 60px;
+    color: #EF64FE
+}
+
+.address {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    text-decoration-thickness: 1px;
+}
+
+.instagram {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 65px;
+}
+
+.instagramIcon {
+    background: url('@assets/instagram.svg') no-repeat;
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.instagramLabel {
+    font-size: 25px;
+    color: #fc7c01;
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.zap {
+    position: absolute;
+    bottom: -19px;
+    right: 29px;
+}
+
+.knowMore {
+    font-size: 25px;
+    text-decoration: underline;
+    font-weight: 200;
+    text-decoration-thickness: 1px;
+    margin-top: 40px;
+}
+
+.videoWrapper {
+    position: relative;
+}
+
+.tape {
+    position: absolute;
+    top: -25px;
+    left: -27px;
+}
+
+.xtape {
+    position: absolute;
+    bottom: 57px;
+    right: -12px;
+}
+
+@media (max-width: 925px) {
+    .content {
+        margin-left: 30px;
+    }
+
+    .date {
+        font-size: 50px;
+        line-height: 45px;
+    }
+
+    .place {
+        font-size: 45px;
+    }
+
+    .address {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .knowMore {
+        font-size: 25px;
+    }
+
+    .instagramIcon {
+        background-size: 35px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .instagramLabel {
+        font-size: 25px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .date {
+        font-size: 45px;
+        line-height: 40px;
+    }
+
+    .place {
+        font-size: 40px;
+    }
+
+    .address {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .knowMore {
+        font-size: 20px;
+    }
+
+    .instagramIcon {
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .instagramLabel {
+        font-size: 20px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .videoWrapper {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .container {
+        padding: 50px 30px;
+    }
+}

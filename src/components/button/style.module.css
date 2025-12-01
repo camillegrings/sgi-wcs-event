@@ -1,0 +1,33 @@
+.primary {
+    min-width: 180px;
+    height: 40px;
+    background-color: #FC7C01;
+    border: 3px solid #080808;
+    color: #080808;
+    font-size: 20px;
+    font-family: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary:hover,
+.primary:active {
+    background-color: #ffa956;
+}
+
+.secondary {
+    min-width: 160px;
+    height: 35px;
+    background-color: #EF64FE;
+    border: 3px solid #080808;
+    color: #080808;
+    font-size: 15px;
+    font-family: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.secondary:hover,
+.secondary:active {
+    background-color: #b21bc2;
+}

@@ -1,0 +1,144 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #151515;
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav a:not(.instagram) {
+    padding: 6px 10px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.instagram {
+    padding: 0;
+    display: inline-flex;
+    align-items: baseline;
+    margin: 0 10px;
+}
+
+.instagramIcon {
+    background: url('@assets/instagram.svg') no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.instagramLabel {
+    font-size: 16px;
+    color: #fc7c01;
+    font-weight: 300;
+    text-decoration: underline;
+    display: none;
+}
+
+.hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FC7C01;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active .bar.top {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.active .bar.middle {
+    opacity: 0;
+}
+
+.hamburger.active .bar.bottom {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.mobileMenu {
+    display: none;
+    background: none;
+    border: none;
+}
+
+@media (max-width: 767px) {
+    .mobileMenu {
+        display: block;
+    }
+
+    .menuTop {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10px 20px;
+        background-color: #151515;
+        z-index: 10;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 56px;
+        left: 0;
+        background-color: #151515;
+        overflow-x: hidden;
+        transition: width 0.5s;
+        padding: 0;
+        flex-direction: column;
+        justify-content: start;
+        z-index: 1000;
+    }
+
+    .nav.open {
+        width: 100%;
+        left: 0;
+    }
+
+    .nav a:not(.instagram) {
+        padding: 0 24px 20px;
+        font-size: 18px;
+    }
+
+    .nav .instagram {
+        align-items: center;
+        margin: 0 24px;
+    }
+
+    .nav .instagramLabel {
+        display: block;
+    }
+
+    .nav .instagramIcon {
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "sgi-wcs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.6.2",
+    "google-spreadsheet": "^5.0.2",
+    "googleapis": "^166.0.0",
+    "negotiator": "^1.0.0",
+    "next": "16.0.3",
+    "next-intl": "^4.5.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.66.1",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/negotiator": "^0.6.4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.3",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "Header": {
+        "register": "Registro",
+        "informations": "Información",
+        "schedule": "Cronograma",
+        "about": "Sobre"
+    },
+    "HomePage": {
+        "title": "Ola Espanhol!"
+    }
+}
