@@ -16,7 +16,7 @@ export default function Footer() {
                 <Link href="/info">{translation('informations')}</Link>
                 <Link href="/schedule">{translation('previous-events')}</Link>
                 <Link href="/register">{translation('register')}</Link>
-                <Link href="/#about">{translation('about')}</Link>
+                <Link href="/about">{translation('about')}</Link>
             </nav>
             <div className={`${styles.social}`}>
                 <a className={`${styles.instagram}`} href='https://www.instagram.com/sgi_oficial/' target='_blank' />

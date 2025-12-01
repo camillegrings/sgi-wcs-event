@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 
 .logo {
@@ -16,4 +17,76 @@
     height: 65px;
     border: none;
     margin-top: -70px;
+}
+
+.bannerMobile {
+    display: none;
+}
+
+
+@media (max-width: 767px) {
+    .bannerMobile {
+        display: block;
+    }
+
+    .bannerDesktop {
+        display: none;
+    }
+
+    .logo {
+        width: 413px;
+        height: 160px;
+        margin-bottom: -60px;
+    }
+
+    .scrollDown {
+        margin-top: -48px;
+    }
+
+    .container {
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    .bannerMobile {
+        width: 350px;
+        height: 230px;
+    }
+
+    .logo {
+        width: 313px;
+        height: 130px;
+        margin-bottom: -45px;
+    }
+}
+
+@media (max-width: 375px) {
+    .bannerMobile {
+        width: 300px;
+        height: 190px;
+    }
+
+    .scrollDown {
+        margin-top: -30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .bannerMobile {
+        width: 280px;
+        height: 190px;
+    }
+
+    .logo {
+        width: 300px;
+        height: 120px;
+        margin-bottom: -45px;
+    }
+
+    .scrollDown {
+        width: 55px;
+        height: 55px;
+        background-size: 55px;
+    }
 }

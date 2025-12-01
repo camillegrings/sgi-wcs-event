@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    padding: 30px 0;
+}
+
+.wrapper {
+    background: url('../../assets/counter-background.png') no-repeat center;
+    background-size: auto;
+    min-width: 177px;
+    height: 198px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.time {
+    font-size: 100px;
+    line-height: 100px;
+    padding-top: 20px;
+}
+
+.interval {
+    font-size: 35px;
+}
+
+@media (max-width: 850px) {
+    .wrapper {
+        margin: 0 5px;
+    }
+
+    .time {
+        font-size: 80px;
+        line-height: 80px;
+    }
+}
